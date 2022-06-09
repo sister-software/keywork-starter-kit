@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "lib": [
+      "esnext"
+    ],
+    "paths": {
+      "@example/browser": ["packages/browser/index.tsx"]
+    },
+    "types": [],
+    "jsx": "react",
+    "strict": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": false,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "composite": true,
+    "checkJs": true,
+    "allowJs": true
+  },
+  "exclude": [
+    "./dist/**/*",
+    "./functions/**/*"
+  ]
+}
