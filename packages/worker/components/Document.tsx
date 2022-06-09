@@ -8,7 +8,7 @@ export const HTMLDocument: React.FC<KeyworkHTMLDocumentProps> = ({ children }) =
   return (
     <html>
       <head>
-        <title>Hello world!</title>
+        <title>ESbuild SSR Example</title>
         <link href="/index.css" rel="stylesheet" />
       </head>
       <body>
