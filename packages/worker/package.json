@@ -16,6 +16,7 @@
     "react-dom": "^18.1.0"
   },
   "devDependencies": {
+    "keywork": "^2.4.1",
     "@packages/common": "0.1.0",
     "@cloudflare/workers-types": "^3.11.0",
     "@types/react": "^18.0.12",

@@ -1,12 +1,32 @@
 import esbuild from 'esbuild'
 import svgrPlugin from 'esbuild-plugin-svgr'
 import FastGlob from 'fast-glob'
+import { createRequire } from 'module'
 import { constants } from 'node:fs'
 import * as fs from 'node:fs/promises'
 import { projectPath } from '../paths.mjs'
 
-const watch = process.argv.some((arg) => arg === '--watch')
+const require = createRequire(import.meta.url)
 
+/** @type {esbuild.WatchMode} */
+let watch = process.argv.some((arg) => arg === '--watch')
+const isProduction = process.env.NODE_ENV === 'production'
+
+/**
+ * @param {esbuild.BuildResult} result
+ */
+function removeUnusedOutput(result) {
+  const cssFiles = Object.keys(result.metafile.outputs).filter((outfile) => outfile.endsWith('.css'))
+  return Promise.all(
+    cssFiles.map((cssFilePath) => {
+      return fs.rm(cssFilePath)
+    })
+  )
+}
+
+/**
+ * @param {string} filePath
+ */
 async function cleanDir(filePath) {
   const present = await fs
     .access(filePath, constants.F_OK)
@@ -19,9 +39,10 @@ async function cleanDir(filePath) {
   return fs.rm(filePath, { recursive: true })
 }
 
-/** @type {import(esbuild.BuildOptions)} */
+/** @type {esbuild.BuildOptions} */
 const commonEsbuildConfig = {
   bundle: true,
+  minify: isProduction,
   platform: 'browser',
   plugins: [svgrPlugin()],
   watch,
@@ -51,17 +72,23 @@ async function buildWorker() {
   const result = await esbuild.build({
     ...commonEsbuildConfig,
     format: 'esm',
-    entryPoints: entryPoints,
+    entryPoints,
     metafile: true,
     outdir,
+    keepNames: true,
+    inject: [require.resolve('keywork/polyfills/ReadableStream')],
+    watch: watch
+      ? {
+          onRebuild: (build, result) => {
+            if (build.errors.length) return
+
+            removeUnusedOutput(result)
+          },
+        }
+      : false,
   })
 
-  const cssFiles = Object.keys(result.metafile.outputs).filter((outfile) => outfile.endsWith('.css'))
-  await Promise.all(
-    cssFiles.map((cssFilePath) => {
-      return fs.rm(cssFilePath)
-    })
-  )
+  removeUnusedOutput(result)
 
   console.log('[Worker]', 'Built!')
 }

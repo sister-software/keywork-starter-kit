@@ -1,27 +1,61 @@
 import { App } from '@packages/common'
 import React from 'react'
 
-import { renderToReadableStream as RenderToReadableStream } from 'react-dom/server'
+import type { renderToReadableStream as RenderToReadableStream } from 'react-dom/server'
 // @ts-expect-error This export isn't yet defined.
 import { renderToReadableStream as _renderToReadableStream } from 'react-dom/server.browser'
 import { HTMLDocument } from '../components/Document'
 
 const renderToReadableStream: typeof RenderToReadableStream = _renderToReadableStream
 
-export const renderReact: PagesFunction = async (data) => {
-  console.log('Check your terminal! This is the URL that requested!', data.request.url.toString())
+const renderReact: PagesFunction = async () => {
+  let reactError: any
 
-  const readableStream = await renderToReadableStream(
-    <HTMLDocument>
-      <App />
-    </HTMLDocument>
-  )
+  let readableStream
 
-  return new Response(readableStream, {
-    headers: {
-      'Content-Type': 'text/html',
-    },
-  })
+  try {
+    readableStream = await renderToReadableStream(
+      <HTMLDocument>
+        <App />
+      </HTMLDocument>,
+      {
+        onError: (error) => {
+          reactError = error
+        },
+      }
+    )
+  } catch (error) {
+    let statusText = 'react Unknown Error'
+    if (error instanceof Error) {
+      statusText = error.message
+    }
+
+    if (reactError instanceof Error) {
+      statusText += reactError.message
+    }
+
+    return new Response(undefined, {
+      status: 500,
+      statusText,
+    })
+  }
+
+  try {
+    return new Response(readableStream, {
+      headers: {
+        'Content-Type': 'text/html',
+      },
+    })
+  } catch (error) {
+    let statusText = 'Unknown Error'
+    if (error instanceof Error) {
+      statusText = error.message
+    }
+    return new Response(undefined, {
+      status: 500,
+      statusText,
+    })
+  }
 }
 
 export const onRequestGet: PagesFunction = async (data) => {

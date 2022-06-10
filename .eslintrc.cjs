@@ -28,6 +28,13 @@ const config = {
   rules: {
     'import/no-unresolved': 'off',
     'import/extensions': 1,
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        ignoreRestSiblings: true,
+        argsIgnorePattern: '^_',
+      },
+    ],
     'react/prop-types': 'off',
     'no-undef': 'off',
     'no-extra-semi': 'off',

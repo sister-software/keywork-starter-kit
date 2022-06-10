@@ -183,6 +183,13 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
+"@cloudflare/kv-asset-handler@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@cloudflare/kv-asset-handler/-/kv-asset-handler-0.2.0.tgz#c9959bbd7a1c40bd7c674adae98aa8c8d0e5ca68"
+  integrity sha512-MVbXLbTcAotOPUj0pAMhVtJ+3/kFkwJqc5qNOleOZTv6QkZZABDMS21dSrSlVswEHwrpWC03e4fWytjqKvuE2A==
+  dependencies:
+    mime "^3.0.0"
+
 "@cloudflare/workers-types@^3.11.0":
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/@cloudflare/workers-types/-/workers-types-3.11.0.tgz#8067dede888ea495cae06898d5e75e4401acf435"
@@ -274,6 +281,15 @@
   dependencies:
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
+
+"@keywork/utils@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@keywork/utils/-/utils-2.2.0.tgz#891bb727d1fc1a9e3bed915d97c45672b8a3b8c3"
+  integrity sha512-fJdTKfgbLa1iJAJVB+4X10/8V6Me714QSqkSaef81kImpaCts28GIzyH4PKtac0f6Ahij91vXkPfRBAqJopK1A==
+  dependencies:
+    deepmerge "^4.2.2"
+    lodash.isplainobject "^4.0.6"
+    ulidx "^0.3.0"
 
 "@miniflare/cache@2.5.0":
   version "2.5.0"
@@ -810,6 +826,11 @@ chalk@^4.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
+classnames@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
+  integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
+
 color-convert@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.3.tgz#bb71850690e1f136567de629d2d5471deda4c1e8"
@@ -850,6 +871,11 @@ cookie@^0.4.1:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.4.2.tgz#0e41f24de5ecf317947c82fc789e06a884824432"
   integrity sha512-aSWTXFzaKWkvHO1Ny/s+ePFpvKsPnjc551iI41v3ny/ow6tBG5Vd+FuqGNhh1LxOmVzOlGUriIlOaokOvhaStA==
+
+cookie@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.5.0.tgz#d1f5d71adec6558c58f389987c366aa47e994f8b"
+  integrity sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==
 
 cosmiconfig@^7.0.1:
   version "7.0.1"
@@ -906,6 +932,11 @@ deep-is@^0.1.3:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.4.tgz#a6f2dce612fadd2ef1f519b73551f17e85199831"
   integrity sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==
+
+deepmerge@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
+  integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
 
 define-properties@^1.1.3, define-properties@^1.1.4:
   version "1.1.4"
@@ -1736,6 +1767,11 @@ http-cache-semantics@^4.1.0:
   resolved "https://registry.yarnpkg.com/http-cache-semantics/-/http-cache-semantics-4.1.0.tgz#49e91c5cbf36c9b94bcfcd71c23d5249ec74e390"
   integrity sha512-carPklcUh7ROWRK7Cv27RPtdhYhUsela/ue5/jKzjegVvXDqM2ILE9Q2BGn9JZJh1g87cp56su/FgQSzcWS8cQ==
 
+http-status-codes@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/http-status-codes/-/http-status-codes-2.2.0.tgz#bb2efe63d941dfc2be18e15f703da525169622be"
+  integrity sha512-feERVo9iWxvnejp3SEfm/+oNG517npqL2/PIA8ORjyOZjGC7TwCRQsZylciLS64i6pJ0wRYz3rkXLRwbtFa8Ng==
+
 ignore@^5.1.8, ignore@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.2.0.tgz#6d3bac8fa7fe0d45d9f9be7bac2fc279577e345a"
@@ -1937,10 +1973,29 @@ json5@^2.2.1:
     array-includes "^3.1.4"
     object.assign "^4.1.2"
 
+keywork@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/keywork/-/keywork-2.4.1.tgz#51ac768565c37c3bfeeb5c5eb01129409f8aac6c"
+  integrity sha512-w2wNNbGMaxMTI1JHl9nt1DoekyO+OavZKWzcN0iRD4Bmp+aL7ZXWPMOGaDVmBc+2EShMNYlUjYWAsvyX6CvWow==
+  dependencies:
+    "@cloudflare/kv-asset-handler" "^0.2.0"
+    "@keywork/utils" "^2.2.0"
+    classnames "^2.3.1"
+    cookie "^0.5.0"
+    deepmerge "^4.2.2"
+    http-status-codes "^2.2.0"
+    lodash.isplainobject "^4.0.6"
+    ulidx "^0.3.0"
+
 kleur@^4.1.4:
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.4.tgz#8c202987d7e577766d039a8cd461934c01cda04d"
   integrity sha512-8QADVssbrFjivHWQU7KkMgptGTl6WAcSdlbBPY4uNF+mWr6DGcKrvY2w4FQJoXch7+fKMjj0dRrL75vk3k23OA==
+
+layerr@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/layerr/-/layerr-0.1.2.tgz#16c8e7fb042d3595ab15492bdad088f31d7afd15"
+  integrity sha512-ob5kTd9H3S4GOG2nVXyQhOu9O8nBgP555XxWPkJI0tR0JeRilfyTp8WtPdIJHLXBmHMSdEq5+KMxiYABeScsIQ==
 
 levn@^0.4.1:
   version "0.4.1"
@@ -1967,6 +2022,11 @@ lodash-es@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
   integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
+
+lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+  integrity sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==
 
 lodash.merge@^4.6.2:
   version "4.6.2"
@@ -2006,6 +2066,11 @@ micromatch@^4.0.4:
   dependencies:
     braces "^3.0.2"
     picomatch "^2.3.1"
+
+mime@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-3.0.0.tgz#b374550dca3a0c18443b0c950a6a58f1931cf7a7"
+  integrity sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==
 
 miniflare@^2.5.0:
   version "2.5.0"
@@ -2604,6 +2669,13 @@ typescript@^4.7.3:
   version "4.7.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.3.tgz#8364b502d5257b540f9de4c40be84c98e23a129d"
   integrity sha512-WOkT3XYvrpXx4vMMqlD+8R8R37fZkjyLGlxavMc4iB8lrl8L0DeTcHbYgw/v0N/z9wAFsgBhcsF0ruoySS22mA==
+
+ulidx@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/ulidx/-/ulidx-0.3.0.tgz#19899adb2d8c57d4f6d598ab63da9164634a5251"
+  integrity sha512-Qvpa2xAzS6fBUpiqHSHWvn6XiSLCAPyNDDz035vsEWmUoXRqC4c9JySLIfdBuK0N1xGBxng6GHDOZgyNQfxAHg==
+  dependencies:
+    layerr "^0.1.2"
 
 unbox-primitive@^1.0.2:
   version "1.0.2"
