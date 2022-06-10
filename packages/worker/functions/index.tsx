@@ -8,8 +8,8 @@ import { HTMLDocument } from '../components/Document'
 
 const renderToReadableStream: typeof RenderToReadableStream = _renderToReadableStream
 
-export const onRequestGet: PagesFunction = async (data) => {
-  console.debug('Check your terminal! This is the URL that requested!', data.request.url.toString())
+export const renderReact: PagesFunction = async (data) => {
+  console.log('Check your terminal! This is the URL that requested!', data.request.url.toString())
 
   const readableStream = await renderToReadableStream(
     <HTMLDocument>
@@ -22,4 +22,21 @@ export const onRequestGet: PagesFunction = async (data) => {
       'Content-Type': 'text/html',
     },
   })
+}
+
+export const onRequestGet: PagesFunction = async (data) => {
+  try {
+    const response = await renderReact(data)
+
+    return response
+  } catch (error) {
+    let statusText = 'Unknown Error'
+    if (error instanceof Error) {
+      statusText = error.message
+    }
+    return new Response(undefined, {
+      status: 500,
+      statusText,
+    })
+  }
 }
