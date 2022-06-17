@@ -6,7 +6,7 @@
       "esnext"
     ],
     "paths": {
-      "@example/browser": ["packages/browser/index.tsx"]
+      "@packages/common/*": ["packages/common/*"]
     },
     "types": [],
     "jsx": "react",

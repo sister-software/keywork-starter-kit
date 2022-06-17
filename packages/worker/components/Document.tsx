@@ -1,3 +1,4 @@
+import { KeyworkHTMLDocumentAppRoot } from 'keywork/react'
 import React from 'react'
 
 export interface KeyworkHTMLDocumentProps {
@@ -12,7 +13,7 @@ export const HTMLDocument: React.FC<KeyworkHTMLDocumentProps> = ({ children }) =
         <link href="/index.css" rel="stylesheet" />
       </head>
       <body>
-        <div id="root">{children}</div>
+        <div id={KeyworkHTMLDocumentAppRoot}>{children}</div>
 
         <script src="/index.js"></script>
       </body>
