@@ -1,8 +1,7 @@
-import { App } from '@packages/common/components/App'
-
 import { DefaultWorkerBindings } from 'keywork/bindings'
 import { KeyworkRequestHandler } from 'keywork/requests'
-import { HTMLDocument } from '../components/Document'
+import { App } from '~common/components/App'
+import { HTMLDocument } from '~worker/components/Document'
 
 class ExampleAppWorker extends KeyworkRequestHandler<DefaultWorkerBindings, {}> {
   PageComponent = App

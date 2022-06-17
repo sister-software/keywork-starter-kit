@@ -1,7 +1,6 @@
-import { App } from '@packages/common/components/App'
-import React from 'react'
-
 import { hydrateKeyworkApp } from 'keywork/react'
+import React from 'react'
+import { App } from '~common/components/App'
 import './index.css'
 
 function renderHydrate() {

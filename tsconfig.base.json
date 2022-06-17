@@ -6,7 +6,9 @@
       "esnext"
     ],
     "paths": {
-      "@packages/common/*": ["packages/common/*"]
+      "~common/*": ["packages/common/*"],
+      "~browser/*": ["packages/common/*"],
+      "~worker/*": ["packages/worker/*"]
     },
     "types": [],
     "jsx": "react",

@@ -1,15 +1,18 @@
 {
-  "name": "@packages/functions",
+  "name": "~worker",
   "license": "MIT",
   "version": "0.1.0",
   "description": "Worker functions",
   "packageManager": "yarn@1.22.0",
   "type": "module",
-  "main": "./dist/index.js",
   "engines": {
     "node": ">= 17.4"
   },
   "scripts": {
+  },
+  "exports": {
+    "package.json": "./package.json",
+    "functions/*": "./functions/*"
   },
   "dependencies": {
     "react": "^18.1.0",
@@ -17,7 +20,7 @@
   },
   "devDependencies": {
     "keywork": "^2.6.1",
-    "@packages/common": "0.1.0",
+    "~common": "0.1.0",
     "@cloudflare/workers-types": "^3.11.0",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5"

@@ -1,5 +1,5 @@
 {
-  "name": "@packages/browser",
+  "name": "~browser",
   "license": "MIT",
   "version": "0.1.0",
   "description": "Worker client-side bundle",

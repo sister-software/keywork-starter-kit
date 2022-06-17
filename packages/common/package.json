@@ -1,5 +1,5 @@
 {
-  "name": "@packages/common",
+  "name": "~common",
   "license": "MIT",
   "version": "0.1.0",
   "description": "Common components for the bundle",
