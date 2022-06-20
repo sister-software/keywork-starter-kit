@@ -2,7 +2,7 @@
 const config = {
   root: true,
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'code-import-patterns'],
   settings: {
     react: {
       version: 'detect',
@@ -48,6 +48,50 @@ const config = {
       'warn',
       {
         'ts-ignore': 'allow-with-description',
+      },
+    ],
+
+    'code-import-patterns/patterns': [
+      'error',
+      {
+        zones: [
+          {
+            target: /packages\/browser\/.+/,
+            forbiddenPatterns: [
+              {
+                pattern: /@local\/worker/,
+                errorMessage:
+                  'Worker modules cannot be imported in this browser bundled file. Instead, move your shared code to packages/shared and import via @local/shared',
+              },
+            ],
+          },
+          {
+            target: /packages\/worker\/.+/,
+            forbiddenPatterns: [
+              {
+                pattern: /@local\/browser/,
+                errorMessage:
+                  'Browser modules cannot be imported in this worker bundled file. Instead, move your shared code to packages/shared and import via @local/shared',
+              },
+            ],
+          },
+
+          {
+            target: /packages\/shared\/.+/,
+            forbiddenPatterns: [
+              {
+                pattern: /@local\/worker/,
+                errorMessage:
+                  'Worker specific code cannot be imported in the shared package. Instead, move your shared code to packages/shared and import via @local/shared',
+              },
+              {
+                pattern: /@local\/browser/,
+                errorMessage:
+                  'Browser specific code cannot be imported in the shared package. Instead, move your shared code to packages/shared and import via @local/shared',
+              },
+            ],
+          },
+        ],
       },
     ],
   },
