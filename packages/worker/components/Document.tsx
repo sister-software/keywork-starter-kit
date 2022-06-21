@@ -10,12 +10,12 @@ export const HTMLDocument: React.FC<KeyworkHTMLDocumentProps> = ({ children }) =
     <html>
       <head>
         <title>ESbuild SSR Example</title>
-        <link href="/index.css" rel="stylesheet" />
+        <link href="/main.css" rel="stylesheet" />
       </head>
       <body>
         <div id={KeyworkHTMLDocumentAppRoot}>{children}</div>
 
-        <script src="/index.js"></script>
+        <script src="/main.js"></script>
       </body>
     </html>
   )

@@ -1,7 +1,7 @@
+import { App } from '@local/shared/components/App'
 import { hydrateKeyworkApp } from 'keywork/react'
 import React from 'react'
-import { App } from '~common/components/App'
-import './index.css'
+import './main.css'
 
 function renderHydrate() {
   console.debug('Hydrating...')

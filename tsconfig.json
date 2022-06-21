@@ -1,7 +1,7 @@
 {
   "files": [],
   "references": [
-    { "path": "./packages/common" },
+    { "path": "./packages/shared" },
     { "path": "./packages/browser" },
     { "path": "./packages/worker" }
   ]

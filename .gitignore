@@ -105,3 +105,4 @@ typings/
 # Keywork
 dist
 functions
+_worker.js

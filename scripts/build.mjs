@@ -1,49 +1,18 @@
 import esbuild from 'esbuild'
 import svgrPlugin from 'esbuild-plugin-svgr'
-import FastGlob from 'fast-glob'
+import { BundledFileName, createBrowserBuildOptions, createWorkerBuildOptions } from 'keywork/bundling'
 import { createRequire } from 'module'
-import { constants } from 'node:fs'
-import * as fs from 'node:fs/promises'
 import { projectPath } from '../paths.mjs'
+import { cleanDir, removeUnusedOutput } from './clean.mjs'
 
 const require = createRequire(import.meta.url)
 
-/** @type {esbuild.WatchMode} */
-let watch = process.argv.some((arg) => arg === '--watch')
+const watch = process.argv.some((arg) => arg === '--watch')
 const isProduction = process.env.NODE_ENV === 'production'
-
-/**
- * @param {esbuild.BuildResult} result
- */
-function removeUnusedOutput(result) {
-  const cssFiles = Object.keys(result.metafile.outputs).filter((outfile) => outfile.endsWith('.css'))
-  return Promise.all(
-    cssFiles.map((cssFilePath) => {
-      return fs.rm(cssFilePath)
-    })
-  )
-}
-
-/**
- * @param {string} filePath
- */
-async function cleanDir(filePath) {
-  const present = await fs
-    .access(filePath, constants.F_OK)
-    .then(() => true)
-    .catch(() => false)
-
-  if (!present) return
-
-  console.log('Cleaning...', filePath)
-  return fs.rm(filePath, { recursive: true })
-}
 
 /** @type {esbuild.BuildOptions} */
 const commonEsbuildConfig = {
-  bundle: true,
   minify: isProduction,
-  platform: 'browser',
   plugins: [svgrPlugin()],
   watch,
 }
@@ -54,9 +23,8 @@ async function buildBrowser() {
   await cleanDir(outdir)
 
   await esbuild.build({
+    ...createBrowserBuildOptions([projectPath('packages', 'browser', 'src', 'main.tsx')], outdir),
     ...commonEsbuildConfig,
-    entryPoints: [projectPath('packages', 'browser', 'src/index.tsx')],
-    outdir,
   })
 
   console.log('[Browser]', 'Built!')
@@ -64,23 +32,20 @@ async function buildBrowser() {
 
 async function buildWorker() {
   console.log('[Worker]', 'Building...')
-  const entryPoints = await FastGlob(projectPath('packages', 'worker', 'functions', '**', '*.{ts,tsx,mts}'))
-  const outdir = projectPath('functions')
-
-  await cleanDir(outdir)
 
   const result = await esbuild.build({
+    ...createWorkerBuildOptions(
+      [projectPath('packages', 'worker', 'src', 'main.tsx')],
+      projectPath('dist', BundledFileName)
+    ),
     ...commonEsbuildConfig,
-    format: 'esm',
-    entryPoints,
     metafile: true,
-    outdir,
     keepNames: true,
     inject: [require.resolve('keywork/polyfills/ReadableStream')],
     watch: watch
       ? {
           onRebuild: (build, result) => {
-            if (build.errors.length) return
+            if (build?.errors.length) return
 
             removeUnusedOutput(result)
           },
