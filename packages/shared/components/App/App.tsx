@@ -8,7 +8,11 @@ function createLogoStyle(hue: number) {
 
 const defaultHue = createLogoStyle(193)
 
-export const App: React.FC = () => {
+export interface AppProps {
+  greeting: string
+}
+
+export const App: React.FC<AppProps> = ({ greeting }) => {
   const [logoStyle, setLogoStyle] = useState(defaultHue)
 
   const randomizeColor = useCallback(() => {
@@ -21,6 +25,7 @@ export const App: React.FC = () => {
       <header className="App-header">
         <Logo className="App-logo" style={logoStyle} />
 
+        <h1>{greeting}</h1>
         <p>
           <button onClick={randomizeColor} type="button">
             Click me, I&#39;m hydrated!

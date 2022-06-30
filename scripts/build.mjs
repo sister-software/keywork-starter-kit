@@ -19,7 +19,7 @@ const commonEsbuildConfig = {
 
 async function buildBrowser() {
   console.log('[Browser]', 'Building...')
-  const outdir = projectPath('dist')
+  const outdir = projectPath('dist', 'static')
   await cleanDir(outdir)
 
   await esbuild.build({
@@ -35,12 +35,11 @@ async function buildWorker() {
 
   const result = await esbuild.build({
     ...createWorkerBuildOptions(
-      [projectPath('packages', 'worker', 'src', 'main.tsx')],
+      [projectPath('packages', 'worker', '_worker.ts')],
       projectPath('dist', BundledFileName)
     ),
     ...commonEsbuildConfig,
     metafile: true,
-    keepNames: true,
     inject: [require.resolve('keywork/polyfills/ReadableStream')],
     watch: watch
       ? {

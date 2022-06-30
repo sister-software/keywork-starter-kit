@@ -1,21 +1,21 @@
 import { KeyworkHTMLDocumentAppRoot } from 'keywork/react'
 import React from 'react'
 
-export interface KeyworkHTMLDocumentProps {
+export interface AppHTMLDocumentProps {
   children: React.ReactNode
 }
 
-export const HTMLDocument: React.FC<KeyworkHTMLDocumentProps> = ({ children }) => {
+export const AppHTMLDocument: React.FC<AppHTMLDocumentProps> = ({ children }) => {
   return (
     <html>
       <head>
         <title>ESbuild SSR Example</title>
-        <link href="/main.css" rel="stylesheet" />
+        <link href="/static/main.css" rel="stylesheet" />
       </head>
       <body>
         <div id={KeyworkHTMLDocumentAppRoot}>{children}</div>
 
-        <script src="/main.js"></script>
+        <script src="/static/main.js"></script>
       </body>
     </html>
   )

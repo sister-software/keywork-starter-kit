@@ -106,3 +106,5 @@ typings/
 dist
 functions
 _worker.js
+.yalc
+.yalc.lock

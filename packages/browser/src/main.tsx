@@ -1,21 +1,15 @@
-import { App } from '@local/shared/components/App'
-import { hydrateKeyworkApp } from 'keywork/react'
+import { App, AppProps } from '@local/shared/components/App'
+import { KeyworkApp } from 'keywork/react/browser'
+import { waitUntilDOMReady } from 'keywork/utilities'
 import React from 'react'
 import './main.css'
 
-function renderHydrate() {
-  console.debug('Hydrating...')
+waitUntilDOMReady().then(() => {
+  const app = new KeyworkApp()
 
-  hydrateKeyworkApp(
+  return app.hydrate<AppProps>((staticProps) => (
     <React.StrictMode>
-      <App />
+      <App {...staticProps} />
     </React.StrictMode>
-  )
-  console.debug('Hydrated!')
-}
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', renderHydrate)
-} else {
-  renderHydrate()
-}
+  ))
+})
