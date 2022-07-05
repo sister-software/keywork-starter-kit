@@ -282,15 +282,6 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@keywork/utils@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@keywork/utils/-/utils-2.2.0.tgz#891bb727d1fc1a9e3bed915d97c45672b8a3b8c3"
-  integrity sha512-fJdTKfgbLa1iJAJVB+4X10/8V6Me714QSqkSaef81kImpaCts28GIzyH4PKtac0f6Ahij91vXkPfRBAqJopK1A==
-  dependencies:
-    deepmerge "^4.2.2"
-    lodash.isplainobject "^4.0.6"
-    ulidx "^0.3.0"
-
 "@miniflare/cache@2.5.0":
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/@miniflare/cache/-/cache-2.5.0.tgz#2292ca0459942177ae5bf4d51286fefaed17967d"
@@ -1978,13 +1969,12 @@ json5@^2.2.1:
     array-includes "^3.1.4"
     object.assign "^4.1.2"
 
-keywork@^2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/keywork/-/keywork-2.7.0.tgz#ec6ab5c5569312ab5fac7ede184d361501359aaf"
-  integrity sha512-36OjnEpp3qYiW/OVpyeDX7GNvulcIJsmvD5a8L+9xkSDiAfIJnJBM8OECRIzyjwyaPnlMSLSG2vqEYmHybbVVA==
+keywork@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/keywork/-/keywork-3.0.0.tgz#8a40ab31a6434b992c5e72aeeedd71af68fa54f9"
+  integrity sha512-r3hraamOzSCu7EqBKOf9N+PF7LAYnejXb7J3Bvsw4T0qB1iJCsfsbrAY+DLZFIOLvdv1Z4k6edqBytvBHNFz1g==
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.2.0"
-    "@keywork/utils" "^2.2.0"
     classnames "^2.3.1"
     cookie "^0.5.0"
     deepmerge "^4.2.2"

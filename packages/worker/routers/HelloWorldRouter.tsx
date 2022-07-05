@@ -1,17 +1,19 @@
 import { App, AppProps } from '@local/shared/components/App'
+import { AppHTMLDocument } from '@local/worker/components/Document'
 import { JSONResponse } from 'keywork/responses'
 import { WorkerRouter } from 'keywork/routing'
 import React from 'react'
-import { AppHTMLDocument } from '../components/Document'
 
+// Declaring a router...
 export const HelloWorldRouter = new WorkerRouter({
-  displayName: 'Hello World',
+  displayName: 'Example Router',
   DocumentComponent: AppHTMLDocument,
 })
 
 // Declaring a route that returns a React element...
 HelloWorldRouter.get('/', async ({ request }) => {
   const url = new URL(request.url)
+  // Reading some optional static props from the URL search params...
   const staticProps: AppProps = {
     greeting: url.searchParams.get('greeting') || 'Hello there!',
   }
@@ -20,7 +22,7 @@ HelloWorldRouter.get('/', async ({ request }) => {
 })
 
 // Declaring a route that returns JSON...
-HelloWorldRouter.get('/json', () => {
+HelloWorldRouter.get('/example-json', () => {
   return { hello: 'world' }
 })
 

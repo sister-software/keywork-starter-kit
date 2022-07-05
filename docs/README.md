@@ -100,32 +100,45 @@ from the root of the project:
 yarn build
 ```
 
-This command should produce a `dist` directory and `_worker.js` file:
+This command should produce a `dist` directory containing our static assets, and a `_worker.js` file:
 
 ```shell
-ls .
-# ... dist ... _worker.js ...
+ls ./dist
+# _worker.js
+#
+# /static
+#   /main.js
+#   /main.css
 ```
 
-## Local Testing
+## Serve
 
-While we'll soon configure Cloudflare Pages to build our project on deploy,
-let's first confirm that the code works locally:
+Before moving on to configure Cloudflare Pages, let's first confirm that the code works locally.
+The `yarn dev` command starts our local server using a simulator called [Miniflare](https://miniflare.dev/).
 
 ```shell
 yarn dev
+
+# Serving at http://localhost:8788/
 ```
 
-This command will start a local server that you can confirm is running in your browser.
+![Example of app running in a browser](/docs/assets/local-server.png?raw=true 'The Keywork app running in Chrome')
 
-## Deploy To Cloudflare Pages
+Now that you've confirmed that your app runs, it's time to configure Cloudflare Pages.
 
-The Cloudflare Pages [documentation](https://developers.cloudflare.com/pages/get-started/)
-offers an in-depth approach, but the following steps should get you started:
+## Deploy With Cloudflare Pages
+
+Now that we've confirmed the project runs locally, we'll setup Cloudflare Pages so
+that a build is published each time we commit to this repo.
+
+> The Cloudflare Pages [documentation](https://developers.cloudflare.com/pages/get-started/)
+> offers an in-depth approach, but the following steps should get you started:
 
 ### 1. Create a new project
 
 Sign into the [Cloudflare Pages Dashboard](https://dash.cloudflare.com/login?redirect_uri=https%3A%2F%2Fdash.cloudflare.com%2F%3Faccount%3Dpages) and press the ["Create a new project"](https://dash.cloudflare.com/login?redirect_uri=https%3A%2F%2Fdash.cloudflare.com%2F%3Faccount%3Dpages/new/provider/github) button and "Connect To Git".
+
+![Cloudflare Pages Dashboard](/docs/assets/pages-dashboard-new-project.png?raw=true)
 
 ### 2. Configure your project
 

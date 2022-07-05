@@ -38,7 +38,7 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0",
     "fast-glob": "^3.2.11",
-    "keywork": "file:.yalc/keywork",
+    "keywork": "^3.0.0",
     "prettier": "^2.4.1",
     "prettier-plugin-organize-imports": "^2.3.4",
     "typescript": "^4.7.3",

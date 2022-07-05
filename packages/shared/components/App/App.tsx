@@ -33,10 +33,10 @@ export const App: React.FC<AppProps> = ({ greeting }) => {
         </p>
 
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          You can edit this file in <code>packages/shared/components/App/App.tsx</code>.
         </p>
         <a className="App-link" href="https://keywork.app" target="_blank" rel="noopener noreferrer">
-          Learn Keywork
+          Visit the Keywork documentation
         </a>
       </header>
     </div>
