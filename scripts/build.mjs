@@ -40,7 +40,7 @@ async function buildWorker() {
     ),
     ...commonEsbuildConfig,
     metafile: true,
-    inject: [require.resolve('keywork/polyfills/ReadableStream')],
+    inject: [require.resolve('keywork/polyfills/worker/ReadableStream')],
     watch: watch
       ? {
           onRebuild: (build, result) => {

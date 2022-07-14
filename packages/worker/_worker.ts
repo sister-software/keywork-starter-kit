@@ -1,5 +1,5 @@
 import { HelloWorldRouter } from '@local/worker/routers/HelloWorldRouter'
-import { CloudflarePagesAssetRouter } from 'keywork/assets'
+import { CloudflarePagesAssetRouter } from 'keywork/assets/cloudflare/pages'
 import { WorkerRouter } from 'keywork/routing'
 
 // Create a router to receive all incoming requests...
