@@ -1,6 +1,6 @@
 # Creating A React App Using Keywork And ESBuild
 
-This example repo shows how Keywork can be used to build a simple Todo List app.
+This example repo shows how Keywork can be used to build a web app on Cloudflare Pages with your own routing. 
 
 ## Features
 
