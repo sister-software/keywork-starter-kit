@@ -7,7 +7,9 @@ import React from 'react'
 // Declaring a router...
 export const HelloWorldRouter = new WorkerRouter({
   displayName: 'Example Router',
-  DocumentComponent: AppHTMLDocument,
+  react: {
+    DocumentComponent: AppHTMLDocument,
+  },
 })
 
 // Declaring a route that returns a React element...
