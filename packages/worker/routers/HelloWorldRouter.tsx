@@ -1,12 +1,11 @@
 import { App, AppProps } from '@local/shared/components/App'
 import { AppHTMLDocument } from '@local/worker/components/Document'
-import { JSONResponse } from 'keywork/responses'
-import { WorkerRouter } from 'keywork/routing'
+import { WorkerRouter } from 'keywork/router'
 import React from 'react'
 
 // Declaring a router...
 export const HelloWorldRouter = new WorkerRouter({
-  displayName: 'Example Router',
+  displayName: 'Hello World Router',
   react: {
     DocumentComponent: AppHTMLDocument,
   },
@@ -35,5 +34,5 @@ interface ExampleParams {
 }
 
 HelloWorldRouter.get<ExampleParams>('/json/:foo/:bar', ({ params }) => {
-  return new JSONResponse({ foo: params.foo, bar: params.bar })
+  return { foo: params.foo, bar: params.bar }
 })
