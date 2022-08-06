@@ -1,6 +1,6 @@
 # Creating A React App Using Keywork And ESBuild
 
-This example repo shows how Keywork can be used to build a web app on Cloudflare Pages with your own routing. 
+This example repo shows how Keywork can be used to build a web app on Cloudflare Pages with your own routing.
 
 ## Features
 
@@ -124,8 +124,6 @@ yarn dev
 
 ![Example of app running in a browser](/docs/assets/local-server.png?raw=true 'The Keywork app running in Chrome')
 
-Now that you've confirmed that your app runs, it's time to configure Cloudflare Pages.
-
 ## Deploy With Cloudflare Pages
 
 Now that we've confirmed the project runs locally, we'll setup Cloudflare Pages so
@@ -159,9 +157,9 @@ Select **Install & Authorize** and **Begin setup**. You can then customize your 
 After you have finished setting your build configuration, select **Save and Deploy**.
 Much like the steps we performed earlier, Cloudflare Pages will follow a similar flow of
 cloning your repo, installing the dependencies, and building your project.
-However, once the build is complete, your app will be deplyed to Cloudflare's global network.
+However, once the build is complete, your app will be deployed to Cloudflare's global network.
 
-When your project finishes deploying, you will then receive a unique URL to view your deployed site!
+When your project finishes deploying, you will then receive a unique URL to [view your deployed site!](https://esbuild.examples.keywork.app)
 
 While we're done setting up your Pages deployment, additional configuration is further detailed in [Cloudflare's documentation](https://developers.cloudflare.com/pages/get-started/#manage-your-site)
 
