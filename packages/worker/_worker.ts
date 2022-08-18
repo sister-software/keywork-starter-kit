@@ -1,9 +1,9 @@
 import { HelloWorldRouter } from '@local/worker/routers/HelloWorldRouter'
-import { CloudflarePagesAssetRouter } from 'keywork/assets/cloudflare/pages'
-import { WorkerRouter } from 'keywork/router'
+import { KeyworkRouter } from 'keywork/router'
+import { CloudflarePagesAssetRouter } from 'keywork/router/cloudflare'
 
 // Create a router to receive all incoming requests...
-const app = new WorkerRouter({
+const app = new KeyworkRouter({
   // A display name used for debugging and log messages.
   displayName: 'Example Keywork App',
   // Here we combine our routers...

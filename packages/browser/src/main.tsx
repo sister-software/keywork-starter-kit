@@ -1,6 +1,6 @@
 import { App, AppProps } from '@local/shared/components/App'
 import { KeyworkApp } from 'keywork/react/browser'
-import { waitUntilDOMReady } from 'keywork/utilities'
+import { waitUntilDOMReady } from 'keywork/timers/browser'
 import React from 'react'
 import './main.css'
 

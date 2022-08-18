@@ -1993,10 +1993,10 @@ json5@^2.2.1:
     array-includes "^3.1.4"
     object.assign "^4.1.2"
 
-keywork@^3.3.3:
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/keywork/-/keywork-3.3.3.tgz#107e36e4405a4c6b291d5c08cd526d97945b12a4"
-  integrity sha512-aN+wPr3Arz6wv+kyHivB2wybefBKb3LjPX0oBDCTE9N50hCDpAr1g5Y1hKtK/NXHl5q6u5h8gPU7YhgG8YMWSA==
+keywork@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/keywork/-/keywork-5.1.0.tgz#19b4dba7c31835041c9adf3709e2e7c48115f303"
+  integrity sha512-Ox0MMgQzGF/11cpsj2Piq/geYtx6LGPoFC0r3dpsoIm1r66SRBQm9sPI47Ql6iAkTWQ0yGDrPC/0w/K5M0CBOA==
   dependencies:
     "@cloudflare/kv-asset-handler" "0.2.0"
     classnames "2.3.1"
