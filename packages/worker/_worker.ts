@@ -1,6 +1,6 @@
 import { HelloWorldRouter } from '@local/worker/routers/HelloWorldRouter'
+import { CloudflarePagesAssetRouter } from 'keywork/middleware'
 import { KeyworkRouter } from 'keywork/router'
-import { CloudflarePagesAssetRouter } from 'keywork/router/cloudflare'
 
 // Create a router to receive all incoming requests...
 const app = new KeyworkRouter({

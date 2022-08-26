@@ -1,6 +1,6 @@
 import esbuild from 'esbuild'
 import svgrPlugin from 'esbuild-plugin-svgr'
-import { BundledFileName, createBrowserBuildOptions, createWorkerBuildOptions } from 'keywork/bundling'
+import { BundledFileName, createBrowserBuildOptions, createWorkerBuildOptions } from 'keywork/bundling/esbuild'
 import { createRequire } from 'module'
 import { projectPath } from '../paths.mjs'
 import { cleanDir, removeUnusedOutput } from './clean.mjs'
