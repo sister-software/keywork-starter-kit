@@ -1,7 +1,10 @@
 {
-  "name": "keywork-example-react-esbuild",
+  "name": "keywork-starter-kit",
   "version": "1.0.0",
-  "repository": "git@github.com:nirrius/keywork-example-react-esbuild.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nirrius/keywork-starter-kit.git"
+  },
   "private": true,
   "license": "MIT",
   "type": "module",
