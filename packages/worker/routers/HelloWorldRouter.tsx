@@ -1,10 +1,10 @@
 import { App, AppProps } from '@local/shared/components/App'
 import { AppHTMLDocument } from '@local/worker/components/Document'
-import { KeyworkRouter } from 'keywork/router'
+import { RequestRouter } from 'keywork/router'
 import React from 'react'
 
 // Declaring a router...
-export const HelloWorldRouter = new KeyworkRouter({
+export const HelloWorldRouter = new RequestRouter({
   displayName: 'Hello World Router',
   react: {
     DocumentComponent: AppHTMLDocument,
