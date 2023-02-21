@@ -27,7 +27,6 @@ const config = {
   },
   rules: {
     'import/no-unresolved': 'off',
-    'import/extensions': 1,
     '@typescript-eslint/no-unused-vars': [
       'warn',
       {

@@ -1,4 +1,4 @@
-import { KeyworkHTMLDocumentAppRoot } from 'keywork/react'
+import { KeyworkHTMLDocumentAppRoot } from 'keywork/components'
 import React from 'react'
 
 export interface AppHTMLDocumentProps {

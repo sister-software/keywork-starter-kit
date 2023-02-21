@@ -1,5 +1,5 @@
-import { App, AppProps } from '@local/shared/components/App'
-import { AppHTMLDocument } from '@local/worker/components/Document'
+import { App, AppProps } from '@project/common/components/App'
+import { AppHTMLDocument } from '@project/worker/components/Document'
 import { RequestRouter } from 'keywork/router'
 import React from 'react'
 

@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "rootDir": ".",
     "outDir": "dist",
@@ -8,5 +8,8 @@
       "DOM",
       "DOM.Iterable"
     ]
-  }
+  },
+  "references": [
+    { "path": "../common" }
+  ]
 }

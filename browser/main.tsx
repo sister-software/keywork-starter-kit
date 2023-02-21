@@ -1,4 +1,4 @@
-import { App, AppProps } from '@local/shared/components/App'
+import { App, AppProps } from '@project/common/components/App'
 import { KeyworkApp } from 'keywork/react/browser'
 import { waitUntilDOMReady } from 'keywork/timers/browser'
 import React from 'react'

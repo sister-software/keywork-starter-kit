@@ -12,6 +12,8 @@
     ".editorconfig": false,
   },
   "files.exclude": {
+    ".github": true,
+    ".yarn": true,
     ".eslintignore": true,
     ".eslintrc.cjs": true,
     ".node-version": true,

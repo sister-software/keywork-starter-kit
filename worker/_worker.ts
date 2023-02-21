@@ -1,4 +1,4 @@
-import { HelloWorldRouter } from '@local/worker/routers/HelloWorldRouter'
+import { HelloWorldRouter } from '@project/worker/routers/HelloWorldRouter'
 import { CloudflarePagesAssetRouter } from 'keywork/middleware'
 import { RequestRouter } from 'keywork/router'
 

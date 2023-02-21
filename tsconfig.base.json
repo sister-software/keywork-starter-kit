@@ -1,21 +1,21 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "target": "esnext",
+    "esModuleInterop": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "outDir": "./dist",
+    "moduleResolution": "node",
     "lib": [
       "esnext"
     ],
     "paths": {
-      "@local/shared/*": ["packages/shared/*"],
-      "@local/browser/*": ["packages/browser/*"],
-      "@local/worker/*": ["packages/worker/*"]
+      "@project/common/*": ["./common/*"],
+      "@project/browser/*": ["./browser/*"],
+      "@project/worker/*": ["./worker/*"]
     },
-    "types": [],
     "jsx": "react",
     "strict": true,
-    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": false,
     "isolatedModules": true,
     "experimentalDecorators": true,
     "baseUrl": ".",

@@ -1,8 +1,20 @@
 {
-  "files": [],
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "lib": [
+      "esnext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+  },
+  "include": [
+    "./scripts/**/*",
+    "./paths.mjs",
+  ],
   "references": [
-    { "path": "./packages/shared" },
-    { "path": "./packages/browser" },
-    { "path": "./packages/worker" }
+    { "path": "./common" },
+    { "path": "./browser" },
+    { "path": "./worker" }
   ]
 }
